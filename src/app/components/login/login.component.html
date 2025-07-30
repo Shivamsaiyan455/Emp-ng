@@ -1,0 +1,20 @@
+<div class="login-page">
+  <h2 class="login-title">Login to EMS Portal</h2>
+
+  <div class="login-card">
+    <form (ngSubmit)="login()">
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" [(ngModel)]="username" required />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" [(ngModel)]="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="register-prompt">
+      Don't have an account? <a routerLink="/register">Register here</a>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

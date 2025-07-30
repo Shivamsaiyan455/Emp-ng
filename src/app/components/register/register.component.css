@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f8fc;
+  margin: 0;
+  padding: 0;
+}
+
+.registration-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0a58ca;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 3rem 2rem; /* More spacing */
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+label {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  display: block;
+  color: #333;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 0.9rem 1rem; /* More height */
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccd6f6;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #0a58ca;
+  box-shadow: 0 0 0 2px rgba(10, 88, 202, 0.15);
+  outline: none;
+}
+
+.error {
+  font-size: 0.82rem;
+  color: #d9534f;
+  margin-top: -0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #0a58ca;
+  color: #fff;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #0846a0;
+  box-shadow: 0 5px 14px rgba(10, 88, 202, 0.3);
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-prompt a {
+  color: #0a58ca;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s ease;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 2rem 1.5rem;
+    max-width: 95%;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+  }
+}

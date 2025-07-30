@@ -1,0 +1,80 @@
+.footer {
+  background-color: #ffffff;
+  padding: 40px 48px 20px;
+  border-top: 1px solid #e5e7eb;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #1f2937;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-brand {
+  max-width: 420px;
+}
+
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2563eb; /* Match EMS theme blue */
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+.footer-logo:hover {
+  color: #1d4ed8;
+}
+
+.footer-brand p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: #1f2937;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #2563eb;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-brand,
+  .footer-links {
+    max-width: 100%;
+  }
+}

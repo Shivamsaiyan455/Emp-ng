@@ -1,0 +1,42 @@
+<div class="landing-page">
+  <header class="navbar">
+    <a routerLink="/" class="navbar__logo" aria-label="Go to EMS Portal homepage">EMS Portal</a>
+
+    <nav class="navbar__actions">
+      <a routerLink="/login" class="btn btn--login" aria-label="Login to EMS Portal">Login</a>
+      <a routerLink="/register" class="btn btn--register" aria-label="Register for EMS Portal">Register</a>
+    </nav>
+  </header>
+
+  <main class="landing-hero">
+    <section class="hero-text" data-aos="fade-right">
+      <h1>
+        Empower your workforce with <span>EMS Portal</span>
+      </h1>
+      <p>Manage teams, tasks, and growth in one place.</p>
+
+      <!-- Email CTA Form -->
+      <form class="cta-form" (submit)="onEmailCapture()">
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="Enter your email"
+          aria-label="Email address"
+          required
+        />
+        <button type="submit" class="btn btn--register">Get Started</button>
+      </form>
+    </section>
+
+    <div class="hero-illustration" data-aos="fade-left">
+      <img
+        src="assets/images/ems-hero.webp.png.png"
+        alt="Illustration showing EMS Dashboard collaboration"
+        loading="lazy"
+      />
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>
