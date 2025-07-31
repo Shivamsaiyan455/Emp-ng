@@ -2,19 +2,27 @@
   <h1 class="form-title">Registration</h1>
 
   <form [formGroup]="user" (ngSubmit)="register()">
-    <!-- Username -->
-    <label for="username">Username:</label>
-    <input type="text" id="username" formControlName="username" placeholder="Enter your username" />
-    <span class="error" *ngIf="user.get('username')?.touched && user.get('username')?.hasError('required')">
-      Username is required.
+    <!-- Name -->
+    <label for="name">Name:</label>
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      placeholder="Enter your name" />
+    <span class="error" *ngIf="user.get('name')?.touched && user.get('name')?.hasError('required')">
+      Name is required.
     </span>
-    <span class="error" *ngIf="user.get('username')?.touched && user.get('username')?.hasError('minlength')">
-      Username must be at least 3 characters.
+    <span class="error" *ngIf="user.get('name')?.touched && user.get('name')?.hasError('minlength')">
+      Name must be at least 3 characters.
     </span>
 
     <!-- Password -->
     <label for="password">Password:</label>
-    <input type="password" id="password" formControlName="password" placeholder="Enter password" />
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password" />
     <span class="error" *ngIf="user.get('password')?.touched && user.get('password')?.hasError('required')">
       Password is required.
     </span>
@@ -22,30 +30,21 @@
       Password must be at least 8 characters.
     </span>
     <span class="error" *ngIf="user.get('password')?.touched && user.get('password')?.hasError('pattern')">
-      Must contain uppercase, lowercase, number, and special character.
-    </span>
-
-    <!-- Age -->
-    <label for="age">Age:</label>
-    <input type="number" id="age" formControlName="age" placeholder="Enter your age" />
-    <span class="error" *ngIf="user.get('age')?.touched && user.get('age')?.hasError('required')">
-      Age is required.
-    </span>
-    <span class="error" *ngIf="user.get('age')?.touched && user.get('age')?.hasError('min')">
-      You must be at least 18.
+      Must include uppercase, lowercase, number, and special character.
     </span>
 
     <!-- Email -->
     <label for="email">Email:</label>
-    <input type="email" id="email" formControlName="email" placeholder="Enter your email" />
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      placeholder="Enter your email" />
     <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('required')">
       Email is required.
     </span>
     <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('email')">
       Invalid email format.
-    </span>
-    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('invalidDomain')">
-      Email must end with .com or .in
     </span>
 
     <!-- Submit -->

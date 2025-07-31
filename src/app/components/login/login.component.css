@@ -117,3 +117,6 @@ form button:hover {
   padding: 3rem 1rem 2rem; /* ⬅️ was 5rem 1rem */
   min-height: calc(100vh - 120px); /* ⬅️ Adjusted for footer gap */
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
