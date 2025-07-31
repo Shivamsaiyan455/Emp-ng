@@ -3,21 +3,21 @@
 
   <div class="login-card">
     <form (ngSubmit)="login()">
-      <label for="username">Username</label>
+      <label for="username">Email</label>
       <input
         id="username"
         type="text"
         name="username"
-        [(ngModel)]="username"
+        [(ngModel)]="userlogin.username"
         required
-        placeholder="Enter your username" />
+        placeholder="Enter your Email" />
 
       <label for="password">Password</label>
       <input
         id="password"
         type="password"
         name="password"
-        [(ngModel)]="password"
+        [(ngModel)]="userlogin.password"
         required
         placeholder="Enter your password" />
 
