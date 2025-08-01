@@ -2,6 +2,7 @@
   <h1 class="form-title">Registration</h1>
 
   <form [formGroup]="user" (ngSubmit)="register()">
+
     <!-- Name -->
     <label for="name">Name:</label>
     <input
@@ -14,6 +15,20 @@
     </span>
     <span class="error" *ngIf="user.get('name')?.touched && user.get('name')?.hasError('minlength')">
       Name must be at least 3 characters.
+    </span>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      placeholder="Enter your email" />
+    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('required')">
+      Email is required.
+    </span>
+    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('email')">
+      Invalid email format.
     </span>
 
     <!-- Password -->
@@ -31,20 +46,6 @@
     </span>
     <span class="error" *ngIf="user.get('password')?.touched && user.get('password')?.hasError('pattern')">
       Must include uppercase, lowercase, number, and special character.
-    </span>
-
-    <!-- Email -->
-    <label for="email">Email:</label>
-    <input
-      id="email"
-      type="email"
-      formControlName="email"
-      placeholder="Enter your email" />
-    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('required')">
-      Email is required.
-    </span>
-    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('email')">
-      Invalid email format.
     </span>
 
     <!-- Submit -->

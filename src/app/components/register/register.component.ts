@@ -34,7 +34,7 @@ export class RegisterComponent {
   register() {
     if (this.user.valid) {
       this.service.register(this.user.value).subscribe((res: any) => {
-        alert('Registration successful');
+        alert('Employee Added ');
         console.log(res);
         this.user.reset();
         this.router.navigate(['/login']);

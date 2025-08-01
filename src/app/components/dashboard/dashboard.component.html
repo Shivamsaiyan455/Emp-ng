@@ -1,1 +1,35 @@
-<p>dashboard works!</p>
+<header class="dashboard-container">
+  <!-- Dashboard Title -->
+  <div class="dashboard-header centered">
+    <h1 class="dashboard-title">EMS Dashboard</h1>
+    <p class="dashboard-subtext">
+      Manage teams, track performance, and grow efficiently.
+    </p>
+  </div>
+
+  <!-- Employee Table Section -->
+  <div class="employee-section">
+    <h2 class="section-title">Employee Records</h2>
+
+    <table class="employee-table">
+      <thead>
+        <tr>
+          <th>#ID</th>
+          <th>Full Name</th>
+          <th>Email Address</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.id }}</td>
+          <td class="capitalize">{{ emp.name | uppercase }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.password | maskPassword }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+<app-footer></app-footer>

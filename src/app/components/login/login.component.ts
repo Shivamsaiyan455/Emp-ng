@@ -21,12 +21,12 @@ export class LoginComponent {
   login() {
     if (this.userlogin.username && this.userlogin.password) {
       this.service.login(this.userlogin).subscribe((res: any) => {
-        if (res) {
+        if (res!=null) {
           alert('Login successful');
           console.log(res);
-          this.router.navigate(['/dashboard']); // ✅ Navigate on success
+          this.router.navigate(['/dashboard']);
         } else {
-          alert('Invalid username or password'); // ❌ If no user matched
+          alert('Invalid username or password');
         }
       });
     } else {

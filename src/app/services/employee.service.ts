@@ -19,5 +19,11 @@ export class EmployeeService {
     return this.http.post("http://localhost:8080/register",userregister)
 
   }
-
+  //http://localhost:8080/getAll
+  getAllEmployee(): Observable<any> {
+  return this.http.get("http://localhost:8080/getAll");
 }
+
+  }
+
+
