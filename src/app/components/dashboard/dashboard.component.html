@@ -18,14 +18,22 @@
           <th>Full Name</th>
           <th>Email Address</th>
           <th>Password</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let emp of employees">
           <td>{{ emp.id }}</td>
-          <td class="capitalize">{{ emp.name | uppercase }}</td>
+          <td class="capitalize">{{ emp.name }}</td>
           <td>{{ emp.email }}</td>
           <td>{{ emp.password | maskPassword }}</td>
+          <td>
+            <div class="action-buttons">
+              <button (click)="deleteEmployee(emp.id)" class="btn btn-primary">Delete</button>
+             <a [routerLink]="['/update', emp.id]" class="btn btn-view">Show</a>
+
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

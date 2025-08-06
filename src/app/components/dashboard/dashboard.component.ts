@@ -21,5 +21,18 @@ export class DashboardComponent implements OnInit {
       this.employees = res;
     })
   }
+  deleteEmployee(id: any) {
+  this.service.deleteEmployee(id).subscribe(res=>{
+    if(res){
+      alert("Employee Deleted Successfully")
+    }
+    else{
+       alert("Something Went Wrong !")
+    }
+
+
+  })
+}
+
 
 }

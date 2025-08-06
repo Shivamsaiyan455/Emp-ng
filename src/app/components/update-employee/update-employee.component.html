@@ -1,1 +1,71 @@
-<p>update-employee works!</p>
+<div class="update-page">
+
+  <h1 class="form-title">Update Employee</h1>
+
+  <form [formGroup]="emp" (ngSubmit)="updateEmployee()">
+
+    <!-- ID (Read-only) -->
+    <label for="id">Employee ID:</label>
+    <input
+      id="id"
+      type="text"
+      formControlName="id"
+      readonly
+      class="readonly-field" />
+
+    <!-- Name -->
+    <label for="name">Name:</label>
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      placeholder="Enter your name" />
+    <span class="error" *ngIf="emp.get('name')?.touched && emp.get('name')?.hasError('required')">
+      Name is required.
+    </span>
+    <span class="error" *ngIf="emp.get('name')?.touched && emp.get('name')?.hasError('minlength')">
+      Name must be at least 3 characters.
+    </span>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      placeholder="Enter your email" />
+    <span class="error" *ngIf="emp.get('email')?.touched && emp.get('email')?.hasError('required')">
+      Email is required.
+    </span>
+    <span class="error" *ngIf="emp.get('email')?.touched && emp.get('email')?.hasError('email')">
+      Invalid email format.
+    </span>
+
+    <!-- Password -->
+    <label for="password">Password:</label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password" />
+    <span class="error" *ngIf="emp.get('password')?.touched && emp.get('password')?.hasError('required')">
+      Password is required.
+    </span>
+    <span class="error" *ngIf="emp.get('password')?.touched && emp.get('password')?.hasError('minlength')">
+      Password must be at least 8 characters.
+    </span>
+    <span class="error" *ngIf="emp.get('password')?.touched && emp.get('password')?.hasError('pattern')">
+      Must include uppercase, lowercase, number, and special character.
+    </span>
+
+    <!-- Submit -->
+    <button type="submit">Update</button>
+
+    <!-- Back -->
+    <div class="login-prompt">
+      Go back to <a routerLink="/dashboard">Dashboard</a>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>

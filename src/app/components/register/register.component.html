@@ -1,7 +1,7 @@
 <div class="registration-page">
   <h1 class="form-title">Registration</h1>
 
-  <form [formGroup]="user" (ngSubmit)="register()">
+  <form [formGroup]="emp" (ngSubmit)="register()">
 
     <!-- Name -->
     <label for="name">Name:</label>
@@ -10,10 +10,10 @@
       type="text"
       formControlName="name"
       placeholder="Enter your name" />
-    <span class="error" *ngIf="user.get('name')?.touched && user.get('name')?.hasError('required')">
+    <span class="error" *ngIf="emp.get('name')?.touched && emp.get('name')?.hasError('required')">
       Name is required.
     </span>
-    <span class="error" *ngIf="user.get('name')?.touched && user.get('name')?.hasError('minlength')">
+    <span class="error" *ngIf="emp.get('name')?.touched && emp.get('name')?.hasError('minlength')">
       Name must be at least 3 characters.
     </span>
 
@@ -24,10 +24,10 @@
       type="email"
       formControlName="email"
       placeholder="Enter your email" />
-    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('required')">
+    <span class="error" *ngIf="emp.get('email')?.touched && emp.get('email')?.hasError('required')">
       Email is required.
     </span>
-    <span class="error" *ngIf="user.get('email')?.touched && user.get('email')?.hasError('email')">
+    <span class="error" *ngIf="emp.get('email')?.touched && emp.get('email')?.hasError('email')">
       Invalid email format.
     </span>
 
@@ -38,13 +38,13 @@
       type="password"
       formControlName="password"
       placeholder="Enter your password" />
-    <span class="error" *ngIf="user.get('password')?.touched && user.get('password')?.hasError('required')">
+    <span class="error" *ngIf="emp.get('password')?.touched && emp.get('password')?.hasError('required')">
       Password is required.
     </span>
-    <span class="error" *ngIf="user.get('password')?.touched && user.get('password')?.hasError('minlength')">
+    <span class="error" *ngIf="emp.get('password')?.touched && emp.get('password')?.hasError('minlength')">
       Password must be at least 8 characters.
     </span>
-    <span class="error" *ngIf="user.get('password')?.touched && user.get('password')?.hasError('pattern')">
+    <span class="error" *ngIf="emp.get('password')?.touched && emp.get('password')?.hasError('pattern')">
       Must include uppercase, lowercase, number, and special character.
     </span>
 

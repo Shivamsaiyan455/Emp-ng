@@ -1,20 +1,19 @@
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 
+
 const routes: Routes = [
-   { path: '', component: WelcomeComponent },
+  { path: '', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component:RegisterComponent},
-   { path: 'dashboard', component: DashboardComponent },
-   {path :'update' , component: UpdateEmployeeComponent}
-
-
-
+  { path: 'register', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'update/:id', component: UpdateEmployeeComponent }
 
 ];
 
@@ -22,6 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule { }

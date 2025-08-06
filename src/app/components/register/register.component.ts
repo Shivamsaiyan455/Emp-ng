@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  user = new FormGroup({
+  emp = new FormGroup({
     name: new FormControl('', [
       Validators.required,
       Validators.minLength(3)
@@ -32,16 +32,22 @@ export class RegisterComponent {
   ) {}
 
   register() {
-    if (this.user.valid) {
-      this.service.register(this.user.value).subscribe((res: any) => {
-        alert('Employee Added ');
-        console.log(res);
-        this.user.reset();
-        this.router.navigate(['/login']);
+    if (this.emp.valid) {
+      this.service.register(this.emp.value).subscribe({
+        next: (res: any) => {
+          alert('✅ Employee Registered Successfully');
+          console.log('Response:', res);
+          this.emp.reset();
+          this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error('Registration failed:', err);
+          alert('❌ Registration failed. Please try again later.');
+        }
       });
     } else {
-      this.user.markAllAsTouched();
-      alert('Please correct the errors before submitting');
+      this.emp.markAllAsTouched();
+      alert('⚠️ Please fill out all required fields correctly.');
     }
   }
 }

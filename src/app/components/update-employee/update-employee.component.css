@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f8fc;
+  margin: 0;
+  padding: 0;
+}
+
+.update-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 2rem;
+  min-height: calc(100vh - 120px); /* Adjust for footer */
+}
+
+.form-title {
+  font-size: 1.8rem;
+  color: #0a58ca;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccd6f6;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: #0a58ca;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(10, 88, 202, 0.1);
+}
+
+/* Read-only ID field */
+input[readonly] {
+  background-color: #f0f4fa;
+  color: #6c757d;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.error {
+  font-size: 0.82rem;
+  color: #d9534f;
+  margin-top: -0.6rem;
+  margin-bottom: 1rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #0a58ca;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #084fc7;
+  box-shadow: 0 4px 12px rgba(10, 88, 202, 0.25);
+}
+
+button:focus {
+  outline: 2px solid #0a58ca;
+  outline-offset: 2px;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.login-prompt a {
+  color: #0a58ca;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 2rem 1.2rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+}
